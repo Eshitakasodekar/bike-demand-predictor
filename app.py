@@ -71,3 +71,14 @@ st.markdown("Predict daily bike rental counts based on weather and seasonal cond
 if st.button("Predict Demand"):
     prediction = model.predict(features)[0]
     st.success(f"Predicted Bike Demand: **{int(prediction)} rentals**")
+
+# Hide Streamlit's default menu, footer, and GitHub/star links
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
